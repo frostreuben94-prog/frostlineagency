@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>How It Works — Frostline Agency</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0a0a0a;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    nav {
+      padding: 24px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1a1a1a;
+      background: #0f0f0f;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .logo span { color: #3b9eff; }
+
+    nav a.cta {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      background: #3b9eff;
+      padding: 10px 22px;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+
+    nav a.cta:hover { background: #2a8ae8; }
+
+    /* Hero */
+    .hero {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 80px 40px 60px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #111;
+      border: 1px solid #2a2a2a;
+      color: #3b9eff;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: 44px;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span { color: #3b9eff; }
+
+    .hero p {
+      font-size: 18px;
+      color: #888;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* The problem */
+    .problem {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 60px 40px;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #3b9eff;
+      margin-bottom: 16px;
+    }
+
+    .problem h2 {
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
+    }
+
+    .problem p {
+      font-size: 16px;
+      color: #888;
+      max-width: 620px;
+      margin-bottom: 16px;
+    }
+
+    .problem p strong { color: #ccc; }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .stat {
+      background: #111;
+      border: 1px solid #1f1f1f;
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .stat-num {
+      font-size: 36px;
+      font-weight: 800;
+      color: #3b9eff;
+      letter-spacing: -1px;
+      margin-bottom: 6px;
+    }
+
+    .stat p {
+      font-size: 13px;
+      color: #666;
+      margin: 0;
+    }
+
+    /* Divider */
+    .divider {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      margin: 0;
+    }
+
+    /* The process */
+    .process {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 60px 40px;
+    }
+
+    .process h2 {
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+
+    .process > p {
+      font-size: 16px;
+      color: #888;
+      margin-bottom: 48px;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 24px;
+      padding-bottom: 40px;
+      position: relative;
+    }
+
+    .step:last-child { padding-bottom: 0; }
+
+    .step-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .step-num {
+      width: 44px;
+      height: 44px;
+      background: #3b9eff;
+      color: #fff;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .step-line {
+      width: 2px;
+      flex: 1;
+      background: #1f1f1f;
+      margin-top: 8px;
+    }
+
+    .step:last-child .step-line { display: none; }
+
+    .step-content {
+      padding-top: 8px;
+    }
+
+    .step-content h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .step-content p {
+      font-size: 15px;
+      color: #777;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .step-content p:last-child { margin-bottom: 0; }
+
+    .step-content strong { color: #bbb; }
+
+    .detail-box {
+      background: #111;
+      border: 1px solid #1f1f1f;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-top: 16px;
+    }
+
+    .detail-box p {
+      font-size: 14px;
+      color: #666;
+      margin: 0;
+      font-style: italic;
+    }
+
+    .detail-box p strong { color: #999; font-style: normal; }
+
+    /* What's included */
+    .included {
+      background: #0f0f0f;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+      padding: 60px 40px;
+    }
+
+    .included-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .included h2 {
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+
+    .included > .included-inner > p {
+      font-size: 16px;
+      color: #888;
+      margin-bottom: 40px;
+    }
+
+    .included-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .included-card {
+      background: #111;
+      border: 1px solid #1f1f1f;
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .included-card h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .included-card p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .icon {
+      font-size: 20px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    /* FAQ */
+    .faq {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 60px 40px;
+    }
+
+    .faq h2 {
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 40px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #1a1a1a;
+      padding: 24px 0;
+    }
+
+    .faq-item:first-of-type { border-top: 1px solid #1a1a1a; }
+
+    .faq-item h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .faq-item p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    /* CTA */
+    .cta-section {
+      background: #0f0f0f;
+      border-top: 1px solid #1a1a1a;
+      padding: 80px 40px;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 14px;
+    }
+
+    .cta-section p {
+      font-size: 16px;
+      color: #888;
+      margin-bottom: 36px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: #3b9eff;
+      color: #fff;
+      padding: 16px 36px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover { background: #2a8ae8; }
+
+    .sub-link {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #444;
+    }
+
+    .sub-link a {
+      color: #3b9eff;
+      text-decoration: none;
+    }
+
+    footer {
+      border-top: 1px solid #1a1a1a;
+      padding: 24px 40px;
+      text-align: center;
+      color: #444;
+      font-size: 13px;
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 32px; }
+      .stat-row { grid-template-columns: 1fr; }
+      .included-grid { grid-template-columns: 1fr; }
+      .step { grid-template-columns: 44px 1fr; gap: 16px; }
+      nav { padding: 20px 24px; }
+      .hero, .problem, .process, .faq { padding-left: 24px; padding-right: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="frostlineagency.html" class="logo">Frost<span>line</span> Agency</a>
+  <a href="mailto:reuben@frostlineagency.co.uk" class="cta">Book a Call</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="badge">How It Works</div>
+  <h1>Everything handled. <span>Nothing missed.</span></h1>
+  <p>Here's exactly what we do, how we set it up, and what it looks like for your business day to day.</p>
+</section>
+
+<hr class="divider">
+
+<!-- The Problem -->
+<section class="problem">
+  <div class="section-label">The Problem</div>
+  <h2>Why tradesmen lose jobs they should be winning</h2>
+  <p>You're good at what you do. The problem isn't your work — it's what happens when someone reaches out and you're too busy to respond straight away.</p>
+  <p><strong>Most customers contact 3 or 4 tradesmen at once.</strong> Whoever replies first is usually the one who gets the job. Not the best tradesman — the fastest one.</p>
+  <p>When you're on a roof, under a sink, or driving between jobs, you can't be checking your inbox every 20 minutes. So you miss the window. The customer moves on. And you never even knew the job existed.</p>
+
+  <div class="stat-row">
+    <div class="stat">
+      <div class="stat-num">78%</div>
+      <p>of customers choose the first business that responds to their enquiry</p>
+    </div>
+    <div class="stat">
+      <div class="stat-num">1hr</div>
+      <p>is the average response time for most tradesmen — by then it's often too late</p>
+    </div>
+    <div class="stat">
+      <div class="stat-num">24/7</div>
+      <p>enquiries come in at all hours — evenings, weekends, while you're on site</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- The Process -->
+<section class="process">
+  <div class="section-label">The Solution</div>
+  <h2>What we set up for you</h2>
+  <p>A reply system that works in the background so you never miss the window again.</p>
+
+  <div class="steps">
+
+    <div class="step">
+      <div class="step-left">
+        <div class="step-num">1</div>
+        <div class="step-line"></div>
+      </div>
+      <div class="step-content">
+        <h3>We learn your business</h3>
+        <p>Before we build anything, we spend time understanding your trade, your typical customers, and how you like to communicate. This makes sure every reply sounds like you — not a generic template.</p>
+        <p>We'll ask you a few simple questions: what jobs you take on, what areas you cover, how you prefer customers to get in touch, and what you'd normally say in a first reply.</p>
+        <div class="detail-box">
+          <p><strong>Takes:</strong> A 20–30 minute call with Reuben. You don't need to prepare anything — just answer naturally.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-left">
+        <div class="step-num">2</div>
+        <div class="step-line"></div>
+      </div>
+      <div class="step-content">
+        <h3>We build and connect your system</h3>
+        <p>We set up a reply system connected directly to your inbox. When a new enquiry lands, the system reads it, understands what the customer is asking about, and sends a personalised reply — all within seconds.</p>
+        <p>The reply is written in plain, natural language. It thanks them for getting in touch, acknowledges what they need, and invites them to book a time or share more details. <strong>It sounds like a real person — because we write it that way.</strong></p>
+        <div class="detail-box">
+          <p><strong>Takes:</strong> 24 hours to set up. We handle everything — you don't log in anywhere or install anything.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-left">
+        <div class="step-num">3</div>
+        <div class="step-line"></div>
+      </div>
+      <div class="step-content">
+        <h3>We test it before it goes live</h3>
+        <p>We run test enquiries through the system to make sure every reply reads naturally and represents your business well. If anything needs adjusting — the tone, the wording, what's included in the response — we fix it before you see a single real customer message.</p>
+        <p>You review the test replies and give us the go-ahead. Nothing goes live until you're happy with it.</p>
+        <div class="detail-box">
+          <p><strong>Takes:</strong> Usually same day. We send you examples to approve before switching it on.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-left">
+        <div class="step-num">4</div>
+        <div class="step-line"></div>
+      </div>
+      <div class="step-content">
+        <h3>It runs while you work</h3>
+        <p>Once it's live, every new enquiry gets an instant, professional response — whether it's 8am on a Monday or 9pm on a Sunday. The customer feels looked after. They don't go elsewhere. And when you're free, you follow up with a warm lead instead of a cold one.</p>
+        <p><strong>You don't manage anything.</strong> No logins, no dashboards, no tech. It just runs in the background.</p>
+        <div class="detail-box">
+          <p><strong>Day to day:</strong> You work as normal. Enquiries get replied to. You follow up when you're ready. We monitor the system and fix anything if needed.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-left">
+        <div class="step-num">5</div>
+        <div class="step-line"></div>
+      </div>
+      <div class="step-content">
+        <h3>We keep it running and improve it over time</h3>
+        <p>We check in regularly to make sure the system is performing well. If you start getting a new type of enquiry, expand your services, or want the tone adjusted, we update it for you.</p>
+        <p>Your monthly fee covers everything — the system, the running costs, and ongoing management. <strong>Nothing extra, no surprises.</strong></p>
+        <div class="detail-box">
+          <p><strong>Included:</strong> Any adjustments needed, we're always available if something needs changing, and optional check-in calls if you want them.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- What's Included -->
+<section class="included">
+  <div class="included-inner">
+    <div class="section-label">What's Included</div>
+    <h2>Everything in your monthly plan</h2>
+    <p>One flat monthly fee. No hidden costs. No contracts.</p>
+    <div class="included-grid">
+      <div class="included-card">
+        <span class="icon">⚡</span>
+        <h3>Instant reply to every enquiry</h3>
+        <p>Every email that comes in gets a professional, personalised response within seconds — around the clock.</p>
+      </div>
+      <div class="included-card">
+        <span class="icon">✍️</span>
+        <h3>Replies written in your voice</h3>
+        <p>We tailor the tone and wording to match how you speak. Customers won't know it's automated — and that's the point.</p>
+      </div>
+      <div class="included-card">
+        <span class="icon">🔧</span>
+        <h3>Full setup and onboarding</h3>
+        <p>We build the entire system for you. No installation, no logins, no tech knowledge required on your end.</p>
+      </div>
+      <div class="included-card">
+        <span class="icon">🛡️</span>
+        <h3>Ongoing management</h3>
+        <p>We monitor the system, fix anything that needs fixing, and update replies whenever your business changes.</p>
+      </div>
+      <div class="included-card">
+        <span class="icon">📞</span>
+        <h3>Optional monthly check-ins</h3>
+        <p>If you want a quick call to review performance or make changes, we're always available. If you'd rather just let it run, that's fine too.</p>
+      </div>
+      <div class="included-card">
+        <span class="icon">🚫</span>
+        <h3>No contracts. Cancel anytime.</h3>
+        <p>We don't lock you in. If it's not working for you, you can walk away. We're confident it will — but the choice is always yours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="section-label">Questions</div>
+  <h2>Things people usually ask</h2>
+
+  <div class="faq-item">
+    <h3>Will customers know it's automated?</h3>
+    <p>No — and that's by design. We spend time learning how you communicate and write the replies to match your natural tone. To a customer, it reads like a message from you or someone on your team.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>What if a customer asks something specific about a job?</h3>
+    <p>The system handles general enquiries and gets the conversation started — asking when they're free, what the job involves, and keeping them engaged. Anything that needs a specific answer from you comes to your inbox as normal, with the customer already warm and waiting.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Do I need to change anything about how I work?</h3>
+    <p>Not at all. You keep using your existing email. We connect to it in the background. Your inbox looks the same — you just see replies already sent and warm leads ready for you to follow up.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>What if I get a lot of spam enquiries?</h3>
+    <p>We set up filters so the system only responds to genuine customer enquiries. Spam, automated emails, and irrelevant messages are ignored.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>How quickly can you get it set up?</h3>
+    <p>Usually within 24 hours of our initial call. Once we understand your business and you've approved the test replies, we switch it on — and it starts working straight away.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>What does it cost?</h3>
+    <p>£350 per month, all inclusive. We offer a free 2-week trial so you can see it working before you commit to anything. No setup fee, no contract.</p>
+  </div>
+
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>See it working for your business</h2>
+  <p>Book a free call and we'll show you exactly how it works — no pressure, no commitment.</p>
+  <a href="mailto:reuben@frostlineagency.co.uk" class="btn-primary">Book a Call</a>
+  <div class="sub-link">
+    Or email us at <a href="mailto:reuben@frostlineagency.co.uk">reuben@frostlineagency.co.uk</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Frostline Agency · frostlineagency.co.uk · <a href="frostlineagency.html" style="color:#444;text-decoration:none;">Home</a>
+</footer>
+
+</body>
+</html>
